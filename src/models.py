@@ -32,7 +32,7 @@ class Favorite(Base):
     character_id = Column(Integer, ForeignKey('character.id'))
     character = relationship("Character", back_populates="favorites")
 
-    class Planet(Base):
+class Planet(Base):
     __tablename__ = 'planet'
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
@@ -41,7 +41,7 @@ class Favorite(Base):
     description = Column(String(1000), nullable=True)
     favorites = relationship("Favorite", back_populates="planet")
 
-    class Character(Base):
+class Character(Base):
     __tablename__ = 'character'
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
